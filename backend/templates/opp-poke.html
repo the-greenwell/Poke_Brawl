@@ -1,0 +1,37 @@
+<div class="pokemon-card border col-4 d-flex flex-column" id="opp-poke" data-opp={{battle.opponent.id}}>
+    <img src="{{battle.opponent.sprite}}" alt="{{battle.opponent.name}}" class="poke-sprite">
+    <div class="d-flex align-items-center flex-wrap">
+        <h1>#{{battle.opponent.id}}. {{battle.opponent.name}}</h1>
+        <div class="ms-4 d-flex gap-2">
+            {% for type in battle.opponent.types %}
+                <div style="width: min-content">
+                    <div class="{{type}} poke-type" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{type}}">
+                        <img src="{{url_for('static', filename='icons/')}}{{type}}.svg" alt="{{type}}">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <strong>Moves:</strong>
+    <div class="moves">
+        {% for move in battle.opponent.moves %}
+            <button class="btn disabled  {{battle.opponent.moves[move]['type']}}">{{battle.opponent.moves[move]['name']}}</button>
+        {% endfor %}
+    </div>
+    <table class="table table-striped stats">
+        <thead>
+            <tr>
+                <th scope="col">Stats</th>
+                <th scope="col">Value</th>
+            </tr>
+        </thead>
+        <tbody class="border">
+            {% for stat in battle.opponent.cur_stats %}
+                <tr>
+                    <td>{{stat}}</td>
+                    <td>{{battle.opponent.cur_stats[stat]['value']}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

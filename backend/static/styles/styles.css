@@ -1,0 +1,157 @@
+
+.bug {
+    background: #92BC2C !important;
+    box-shadow: 0 0 20px #92BC2C;
+}
+
+.dark {
+    background: #595761 !important;
+    box-shadow: 0 0 20px #595761;
+}
+
+.dragon {
+    background: #0C69C8 !important;
+    box-shadow: 0 0 20px #0C69C8;
+}
+
+.electric {
+    background: #F2D94E !important;
+    box-shadow: 0 0 20px #F2D94E;
+}
+
+.fire {
+    background: #FBA54C !important;
+    box-shadow: 0 0 20px #FBA54C;
+}
+
+.fairy {
+    background: #EE90E6 !important;
+    box-shadow: 0 0 20px #EE90E6;
+}
+
+.fighting {
+    background: #D3425F !important;
+    box-shadow: 0 0 20px #D3425F;
+}
+
+.flying {
+    background: #A1BBEC !important;
+    box-shadow: 0 0 20px #A1BBEC;
+}
+
+.ghost {
+    background: #5F6DBC !important;
+    box-shadow: 0 0 20px #5F6DBC;
+}
+
+.grass {
+    background: #5FBD58 !important;
+    box-shadow: 0 0 20px #5FBD58;
+}
+
+.ground {
+    background: #DA7C4D !important;
+    box-shadow: 0 0 20px #DA7C4D;
+}
+
+.ice {
+    background: #75D0C1 !important;
+    box-shadow: 0 0 20px #75D0C1;
+}
+
+.normal {
+    background: #A0A29F !important;
+    box-shadow: 0 0 20px #A0A29F;
+}
+
+.poison {
+    background: #B763CF !important;
+    box-shadow: 0 0 20px #B763CF;
+}
+
+.psychic {
+    background: #FA8581 !important;
+    box-shadow: 0 0 20px #FA8581;
+}
+
+.rock {
+    background: #C9BB8A !important;
+    box-shadow: 0 0 20px #C9BB8A;
+}
+
+.steel {
+    background: #5695A3 !important;
+    box-shadow: 0 0 20px #5695A3;
+}
+
+.water {
+    background: #539DDF !important;
+    box-shadow: 0 0 20px #539DDF;
+}
+.poke-type {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.poke-type img{
+    width: 1em;
+}
+
+p {
+    margin: 0;
+}
+
+.moves {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.poke-sprite {
+    width: 50%;
+    align-self: center;
+}
+
+.table > thead > tr > th {
+    padding: .5rem 0 !important;
+}
+
+.btn:hover {
+    color: black !important;
+}
+.btn {
+    color: white !important;
+}
+.master-ball {
+    width: 5em;
+    -webkit-animation: shake .5s infinite alternate;
+    animation: shake .5s infinite alternate;
+}
+@keyframes shake {
+    0% {
+        transform: rotate(7deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-7deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .moves {
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 1fr) !important;
+        gap: 1em;
+    } 
+}

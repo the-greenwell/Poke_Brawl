@@ -1,0 +1,9 @@
+<div class="border col-2 d-flex flex-column overflow-scroll" style="max-height: 42em">
+    <div>
+        <h3 class="border-bottom">Battle Log</h3>
+        
+        {% for move in battle.past_turns %}
+        <p class="border-bottom">{{move}}</p>
+        {% endfor %}
+    </div>
+</div>

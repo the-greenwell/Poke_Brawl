@@ -1,0 +1,41 @@
+<div class="pokemon-card border col-4 d-flex flex-column offset-1" id="pokemon" data-poke={{battle.challenger.id}}>
+    <img src="{{battle.challenger.sprite}}" alt="{{battle.challenger.name}}" class="poke-sprite">
+    <div class="d-flex align-items-center flex-wrap">
+        <h1>#{{battle.challenger.id}}. {{battle.challenger.name}}</h1>
+        <div class="ms-4 d-flex gap-2">
+            {% for type in battle.challenger.types %}
+                <div style="width: min-content">
+                    <div class="{{type}} poke-type" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{type}}">
+                        <img src="{{url_for('static', filename='icons/')}}{{type}}.svg" alt="{{type}}">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>    
+    <strong>Moves:</strong>
+    <div class="moves">
+        {% for move in battle.challenger.moves %}
+            <form action="/attack" method="POST" class="m-0 row">
+                <input type="hidden" name="move" value="{{battle.challenger.moves[move]['id']}}"/>
+                <input type="hidden" name="bid" value="{{session['bid']}}"/>
+                <button type="submit" class="btn {{battle.challenger.moves[move]['type']}}">{{battle.challenger.moves[move]['name']}} ({{battle.challenger.moves[move]['category']}})</button>
+            </form>
+        {% endfor %}
+    </div>
+    <table class="table table-striped stats">
+        <thead>
+            <tr>
+                <th scope="col">Stats</th>
+                <th scope="col">Value</th>
+            </tr>
+        </thead>
+        <tbody class="border">
+            {% for stat in battle.challenger.cur_stats %}
+                <tr>
+                    <td>{{stat}}</td>
+                    <td>{{battle.challenger.cur_stats[stat]['value']}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
